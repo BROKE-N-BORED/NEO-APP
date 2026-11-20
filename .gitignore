@@ -1,0 +1,19 @@
+# Gradle / Android Studio
+.gradle/
+local.properties
+*.iml
+.idea/
+build/
+app/build/
+
+# Signing — never commit keystores or key passwords.
+*.jks
+*.keystore
+
+# Local overrides
+*.local.properties
+
+# Secrets — keys live in the app's EncryptedSharedPreferences on the phone,
+# never in this repo.
+.env
+*.env

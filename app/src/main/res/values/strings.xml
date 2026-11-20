@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- The display name lives here and in build.gradle.kts versionName only,
+         so a rename is a one-place change. -->
+    <string name="app_name">NEO</string>
+</resources>
