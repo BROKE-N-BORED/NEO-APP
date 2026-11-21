@@ -150,7 +150,9 @@ internal abstract class StreamingClient : ProviderClient {
         }.build()
         val call = streamHttp.newCall(request)
         withContext(Dispatchers.IO) {
-            currentCoroutineContext().job.invokeOnCancellation { call.cancel() }
+            currentCoroutineContext().job.invokeOnCompletion { cause ->
+                if (cause != null) call.cancel()
+            }
             val response = try {
                 call.execute()
             } catch (e: Exception) {
